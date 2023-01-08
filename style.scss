@@ -1,6 +1,7 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    margin-block-end: 0;
 }
 
 body{
@@ -62,3 +63,4 @@ body{
 input:focus::placeholder {
     color: transparent;
   }
+
