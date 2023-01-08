@@ -1,6 +1,8 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
 }
 
 body {
