@@ -1,5 +1,5 @@
 $(document).on("keypress", function (e) {
-  if (e.which == 114) {
+  if (e.which == 	32) {
     $("#TESTWORD").html("");
     $("#DEFINITON").html("");
     $("#Push_here").empty();
@@ -49,7 +49,8 @@ $(document).on("keypress", function (e) {
 
         colorEm();
         function colorEm() {
-          var $div = $("#Push_here span");
+          var $div = $("#Push_here #Child");
+          var $innerDiv = $("#Push_here #Inner")
           var start = Math.floor(Math.random() * $div.length - 4);
           var end = Math.floor(Math.random() * ($div.length - start)) + start + 2;
           if (end === $div.length) {
@@ -92,22 +93,51 @@ $(document).on("keypress", function (e) {
         console.log('============')
    
 
-        $("#GetInput").keyup(function(event) {
-          if (event.keyCode === 13) {
-            let val = $("#GetInput").val();
-            for (let i = 0; i < MissingWord.length; i++) {
-              console.log(MissingWord[i])
-              if(val == MissingWord[i] ){
-                console.log("MATCH FOUND")
-              }          
-              else{
-                console.log("MATCH NOT FOUND")
-              }
-            }
-            console.log(`Player Input Value Is ${val}`)
-            $("#GetInput").val("");
+      //   $("#GetInput").keyup(function(event) {
+      //     if (event.keyCode === 13) {
+      //       let val = $("#GetInput").val();
+      //       for (let i = 0; i < MissingWord.length; i++) {
+      //         console.log(MissingWord[i])
+      //         if(val == MissingWord[i] ){
+      //           console.log("MATCH FOUND")
+      //         }          
+      //         else{
+      //           console.log("MATCH NOT FOUND")
+      //         }
+      //       }
+      //       console.log(`Player Input Value Is ${val}`)
+      //       $("#GetInput").val("");
+      //     }
+      // });
+
+
+      //! Better Version
+      $("#GetInput").keyup(function(event) {
+        if (event.keyCode === 13) {
+
+          for (let i = 0; i < MissingWord.length; i++) {
+            console.log(MissingWord[i])
           }
+          let val = $("#GetInput").val();
+          let $missing = $(".Missing");
+          let $innerDiv = $("#Push_here #Inner")
+          $missing.each(function() {
+            if ($(this).text() === val) {
+              $(this).css("background-color", "green");
+              $($innerDiv).css("opacity", "1");
+              $(this).css("opacity", "1");
+              $(this).removeClass("Missing");
+              $("#GetInput").val("");
+            }
+          });
+      
+          if ($missing.length === 0) {
+            alert("All missing elements have been filled in correctly!");
+          }
+        }
       });
+
+      //! ends Here
           //do something special
         }, 3000);
         
