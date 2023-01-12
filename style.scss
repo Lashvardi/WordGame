@@ -85,13 +85,6 @@ body{
     text-align: center;
   }
   
-  input:focus::placeholder {
-    color: transparent;
-  }
-    h1 {
-        font-size: 50px;
-    }
-
 
 .def{
     color: rgb(0, 0, 0) !important;
@@ -112,7 +105,7 @@ body{
   }
 
 input:focus::placeholder {
-    color: transparent;
+    color: transparent !important;
   }
 #TESTWORD {
     color: black;

@@ -86,22 +86,6 @@ body {
   text-align: center;
 }
 
-input:focus::-moz-placeholder {
-  color: transparent;
-}
-
-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-input:focus::placeholder {
-  color: transparent;
-}
-
-h1 {
-  font-size: 50px;
-}
-
 .def {
   color: rgb(0, 0, 0) !important;
   width: 400px;
@@ -132,15 +116,15 @@ h1 {
 }
 
 input:focus::-moz-placeholder {
-  color: transparent;
+  color: transparent !important;
 }
 
 input:focus:-ms-input-placeholder {
-  color: transparent;
+  color: transparent !important;
 }
 
 input:focus::placeholder {
-  color: transparent;
+  color: transparent !important;
 }
 
 #TESTWORD {
