@@ -3,17 +3,18 @@
   box-sizing: border-box;
   -webkit-margin-after: 0;
           margin-block-end: 0;
+  transition: 200ms !important;
 }
 
 body {
-  background-color: #50577A !important;
+  background-color: #50577a !important;
 }
 
 .word_letter {
   width: 75px !important;
   height: 75px !important;
   background-color: #243763;
-  color: #F2DEBA;
+  color: #f2deba;
   font-size: 36px;
   display: flex;
   align-items: center;
